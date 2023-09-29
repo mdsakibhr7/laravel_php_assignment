@@ -8,8 +8,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $celsius = $tempConv;
 
     $fahrenhit = (float)(($celsius * 9 / 5) + 32);
-    
-    echo $fahrenhit;
+
+    printf('Temperature in Fahrenheit is: ' . $fahrenhit);
+
 
 }
 
