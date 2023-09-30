@@ -1,21 +1,20 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
+if ( $_SERVER['REQUEST_METHOD'] == "POST" ) {
 
-    $tempConv = isset($_POST['tempConv']) ? ($_POST['tempConv']) : '';
-    $tempType = isset($_POST['tempType']) ? ($_POST['tempType']) : '';
-    
+	$tempConv = isset( $_POST['tempConv'] ) ? ( $_POST['tempConv'] ) : '';
+	$tempType = isset( $_POST['tempType'] ) ? ( $_POST['tempType'] ) : '';
 
-    if(!empty($tempConv) && !empty($tempType)){
-        if($tempType === 'celsius'){
-            $celsiusToFahrenheit = (float)(($tempConv * 9 / 5) + 32);
-            printf('Temperature in Fahrenheit is: ' . $celsiusToFahrenheit . "<br>");
-        }
-        elseif($tempType ==='fahrenhit'){
-            $fahrenheitToCelsius = ($tempConv - 32) * 5 / 9;
-            printf('Temperature in Celsius is: ' . $fahrenheitToCelsius);
-        }
 
-    }
+	if ( ! empty( $tempConv ) && ! empty( $tempType ) ) {
+		if ( $tempType === 'celsius' ) {
+			$celsiusToFahrenheit = (float) ( ( $tempConv * 9 / 5 ) + 32 );
+			printf( 'Temperature in Fahrenheit is: ' . $celsiusToFahrenheit . "<br>" );
+		} elseif ( $tempType === 'fahrenhit' ) {
+			$fahrenheitToCelsius = ( $tempConv - 32 ) * 5 / 9;
+			printf( 'Temperature in Celsius is: ' . $fahrenheitToCelsius );
+		}
+
+	}
 
 }
 
