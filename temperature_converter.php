@@ -2,22 +2,20 @@
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $tempConv = isset($_POST['tempConv']) ? ($_POST['tempConv']) : '';
+    $tempType = isset($_POST['tempType']) ? ($_POST['tempType']) : '';
+    
 
-    /**
-     * PHP Code to Convert Celsius to Fahrenheit
-     */
+    if(!empty($tempConv) && !empty($tempType)){
+        if($tempType === 'celsius'){
+            $celsiusToFahrenheit = (float)(($tempConv * 9 / 5) + 32);
+            printf('Temperature in Fahrenheit is: ' . $celsiusToFahrenheit . "<br>");
+        }
+        elseif($tempType ==='fahrenhit'){
+            $fahrenheitToCelsius = ($tempConv - 32) * 5 / 9;
+            printf('Temperature in Celsius is: ' . $fahrenheitToCelsius);
+        }
 
-    $temperature = $tempConv;
-
-    $celsiusToFahrenheit = (float)(($temperature * 9 / 5) + 32);
-    printf('Temperature in Fahrenheit is: ' . $celsiusToFahrenheit ."<br>");
-
-    /**
-     * PHP Code to Convert Fahrenheit to Celsius
-     */
-
-    $fahrenheitToCelsius = (($temperature - 32) * 5) / 9;
-    printf('Temperature in Celsius is: ' . $fahrenheitToCelsius);
+    }
 
 }
 
